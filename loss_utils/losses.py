@@ -55,7 +55,7 @@ def dice_metric_binarized(y_pred, y_true, tresh=0.5, epsilon=1e-6, X_Y=(2, 3)):
     numerator = 2.0 * torch.sum(y_pred * y_true, X_Y)
     denominator = torch.sum(torch.pow(y_pred, 2) + torch.pow(y_true, 2), X_Y)
 
-    return 1 - torch.mean(
+    return torch.mean(
         numerator / (denominator + epsilon)
     )  # average over classes and batch
 
