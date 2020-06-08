@@ -24,8 +24,8 @@ _VAL_DATALOADER_CONFIG:
   _CLASS_INFO:
     _MODULE_NAME: "new_datasets.dataloader"
     _CLASS_NAME: "BaselineDataloaderGetter"
-  "batchsize": 64
-  "shuffle": False
+  "batchsize": 96
+  "shuffle": True
   "dataset":
     _CLASS_INFO:
       _MODULE_NAME: "new_datasets.datasets"
@@ -43,11 +43,13 @@ _VAL_DATALOADER_CONFIG:
         _MODULE_NAME: "new_datasets.transforms"
         _CLASS_NAME: "Transform_X"
       "dim": 96
+      "crop_size": 58
     "transform_y":
       _CLASS_INFO:
         _MODULE_NAME: "new_datasets.transforms"
         _CLASS_NAME: "Transform_Y"
       "dim": 96
+      "crop_size": 58
       "mask2label":
         _CLASS_INFO:
           _MODULE_NAME: "new_datasets.transforms"

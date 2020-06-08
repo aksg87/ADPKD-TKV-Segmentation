@@ -60,11 +60,12 @@ class ThreeChannelMask:
 
 
 class Transform_X:
-    def __init__(self, dim=96):
+    def __init__(self, dim=96, crop_size=64):
         self.T_x = transforms.Compose(
             [
                 transforms.ToPILImage(),
                 transforms.Resize((dim, dim), interpolation=Image.CUBIC),
+                transforms.CenterCrop(crop_size),
                 transforms.ToTensor(),
                 transforms.Lambda(lambda x: x.view(x.shape).expand(3, -1, -1)),
             ]
@@ -75,7 +76,7 @@ class Transform_X:
 
 
 class Transform_Y:
-    def __init__(self, dim=96, mask2label=None):
+    def __init__(self, dim=96, crop_size=64, mask2label=None):
         if mask2label is None:
             mask2label = BaselineMaskEncode()
         self.mask2label = mask2label
@@ -85,6 +86,7 @@ class Transform_Y:
                 transforms.ToPILImage(),
                 # "non-nearest" interpolation breaks mask --> one-hot-encode
                 transforms.Resize((dim, dim), interpolation=Image.NEAREST),
+                transforms.CenterCrop(crop_size),
                 transforms.ToTensor(),
                 transforms.Lambda(lambda x: self.mask2label(x)),
             ]
