@@ -1,6 +1,12 @@
-# adpkd-segmentation
+# ADPKD-segmentation for determining Total Kidney Volume (TKV)
 Autosomal dominant polycystic kidney disease (ADPKD) Segmentation in PyTorch
 
+### Preliminary Results Presented at SIIM 2020
+
+Goel, A., Shih, G., Riyahi, S., Mutasa, S., Prince, M. (2020). Convolutional Neural Networks for Automated Segmentation of Autosomal Dominant Polycystic Kidney Disease. Oral presentation at the Society for Imaging Informatics in Medicine 2020, Austin TX
+https://cdn.ymaws.com/siim.org/resource/resmgr/siim20/abstracts-research/goel_convolutional_neural_ne.pdf
+
+### Examples of ADPKD MRI Data
 ![Example ADPKD MRI Data](adpkd_sample_aksg87.gif)
 
 ## Steps to run:
