@@ -1,6 +1,8 @@
 # adpkd-segmentation
 Autosomal dominant polycystic kidney disease (ADPKD) Segmentation in PyTorch
 
+![Example ADPKD MRI Data](adpkd_sample_aksg87.gif)
+
 ## Steps to run:
 
 #### 1. Install pip packages from `requirements.txt`.
